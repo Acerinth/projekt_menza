@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Dokumentacija</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Web aplikacija koja omogućuje studentima rezervaciju menija u menzi.">
+        <meta name="author" content="Paula Kokic">
+        <link href="css/paukokic.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <header>
+            <h1 id="zaglavlje">Rezervacija menija</h1>
+
+        </header>
+        <div class="glavna">
+            <div class="traka">
+                <span class="lijevo">
+                    <a href="index.php">Početna</a>
+                    <a href="popis_menzi.php">Popis menzi</a>
+                    <a href="dokumentacija.html">Dokumentacija</a>
+                    <a href="o_autoru.html">O autoru</a>
+                </span>
+                <span class="desno">
+                    <a href="prijava.php">Prijava</a>
+                    <a href="registracija.php">Registracija</a>
+                </span>
+            </div>
+
+            <section id="sadrzaj">
+                <h2>Dokumentacija</h2>
+
+                <h3>Opis projektnog zadatka</h3>
+                Omogućuje studentima rezervaciju menija u menzi.
+                Uloge:
+                <ul>
+                    <li>Neregistrirani korisnik</li>
+                    <li>Registrirani korisnik / student</li>
+                    <li>Moderator / zaposlenik</li>
+                    <li>Administrator</li>
+                </ul>
+                <p><b>Detaljne upute:</b><br></p>
+                Administrator
+                <ul>
+                    <li>Kreira menze (Elektron, Studentski VŽ, Studentski ZG, …) i dodjeljuje moderatore menzi.</li>
+                    <li>Dodaje adrese (država, grad, ulica, broj) lokacija menzi.</li>
+                    <li>Može preko csv datoteke popuniti ili ažurirati (sa novim podacima) tablice (min. 2) koje predstavljaju katalog (npr. menze)</li>
+                    <li>Vidi statistiku posjećenosti pojedinih stranica (za minimalno 5 stranica) i statistiku za minimalno pet upita nad bazom podataka koji se koriste u aplikaciji. Statistiku posjećenosti stranica može filtrirati po korisnicima i vremenskom periodu te sortirati po datumu i vremenu. A statistiku upita može filtrati po korisnicima i sortirati po datumu i vremenu.</li>
+                </ul>
+                Moderator
+                <ul>
+                    <li>Definira dnevne menije u menzi za koje je dodijeljen kao moderator sa danom kada vrijedi taj meni te količinom tog menija za taj dan.</li>
+                    <li>Vidi popis svih menija za taj dan kojima je količina ispod 10, a posebno su istaknuti oni kojima je količina 0. Ako je količina manja od 10, a nije 0 može povećati količinu za taj meni.</li>
+                    <li>Može potvrditi/odbiti rezervaciju za menijom. Korisniku se automatski šalje mail sa informacijom da li mu je rezervacija potvrđena ili odbijena.</li>
+                    <li>Za potvrđene rezervacije vidi korisnike sa vremenom kada dolaze. Može označiti (ako je vrijeme dolaska prošlo) da li se korisnik pojavio ili ne. Ako ne stavlja ga se automatski crnu listu i korisnik ne može tjedan dana rezervirati u toj menzi.</li>
+                    <li>Vidi aplikativnu statistiku klikova „sviđa mi se“ i „ne sviđa mi se“ po menzama ili po menijima. Uz to može filtrirati po vremenskom periodu.</li>
+                </ul>
+                Registrirani korisnik
+                <ul>
+                    <li>Korisnik može rezervirati meni u menzi na određeni dan ako količina nije 0 definirajući datum i vrijeme kada će doći u restoran. Ne može rezervirati ako je na crnoj listi u toj menzi u danom trenutku.</li>
+                    <li>Korisnik vidi svoje sve rezervacije i vidi dali je na crnoj listi u nekoj menzi i do kada.</li>
+                    <li>Korisnik može kliknuti na gumb „sviđa mi se“ ili „ne sviđa mi se“ za menzu i/ili meni.</li>
+                    <li>Postavlja slike omiljenih menija i može svaku sliku označiti (eng. tag). Svoje slike može filtrirati na temelju oznaka prikazujući slike u obliku galerije.</li>
+                    <li>Korisnik može na Google mapi vidjeti menze (opcionalno za dodatne bodove).</li>
+                </ul>
+                Neregistrirani korisnik
+                <ul>
+                    <li>Može vidjeti popis menzi i odabirom menze vidi popis menija tri najkorištenija menija za današnji dan.</li>
+                </ul>
+                <br>
+                Opće upute:
+                <ol>
+                    <li><b>Neregistrirani korisnik</b> - je korisnik koji nema korisnički račun na sustavu. Članom sustava može postati u slučaju registracije na sustav. Korisnik se smatra registriranim tek nakon aktivacije računa putem aktivacijske poruke elektroničke pošte (link za aktivaciju vrijedi 12 sata).</li>
+                    <li><b>Registrirani korisnik</b> - je korisnik koji ima kreiran i aktiviran korisnički račun. U slučaju četiri neuspješne prijave na sustav (za redom), korisniku se zaključava pristup sustavu; u tom slučaju se aktiviranje korisničkog računa obavlja od strane administratora sustava. U slučaju uspješne prijave na sustav, kreira se korisnička sesija koja traje do isteka vremena podešenog od strane administratora ili do odjave korisnika sa sustava. Registrirani korisnik ima sva prava koja ima neregistrirani korisnik.</li>
+                    <li><b>Moderator</b> - ima sva prava koja ima i registrirani korisnik.</li>
+                    <li><b>Kod svih uloga</b> - na svakom dijelu projekta gdje postoji kreiranje novih objekata (npr. kategorije, korisnici, itd.) mora se napraviti i ažuriranje i pregled.</li>
+                    <li><b>Administrator</b> - ima sva prava koja imaju sve prethodno definirane uloga na sustavu te uz to ima CRUD (unos, ažuriranje, pregled) kontrole (vlastito rješenje, pojedinačno za svaku tablicu) nas svim podacima u sustavu. Također ima mogućnost uvid u log sustava (pogledaj točku 9) kao i pretraživanje istog prema datumu (vremenski interval), tipu log zapisa i korisniku. </li>
+                    <li><b>Straničenje</b> - svaki ispis podataka veći od 15 mora imati straničenje. Poželjno je da se broj zapisa po stranici može konfigurirati putem uloge administratora. </li>
+                    <li><b>Statistika</b> - Sve statistike moraju imati pregled za ispis, sa gumbom za print (koji otvara print dijalog u browseru) (te gumbom za generiranje PDF dokumenta – za dodatne bodove). Sve statistike koje se prikazuju moraju imati mogućnost sortiranja po prikazanim kolonama (minimalno dvije kolone). Obavezno prikazivanje statističkih podataka u obliku barem jedne vrste grafa (prema odabiru, zabranjeno korištenje gotovih rješenja (PHP i JavaScript), obavezno korištenje JavaScripta i Canvasa, a moguće korištenje AJAX-a). </li>
+                    <li><b>Relativne putanje</b> - rješenje projekta mora koristiti relativne putanje.  </li>
+                    <li><b>Dnevnik rada</b> - svaki zahtjev treba biti zapisan u dnevnik rada tzv. log aplikacije (tko, kada, što radio i sl.). Obavezno zapisivanje osnovnih informacija o radu sustava u log (tip prijava/odjava (korisnik, vrijeme), tip rad s bazom (korisnik, upit, vrijeme), tip ostale radnje (korisnik, vrijeme, radnja)). Administrator može pogledati u traženom razdoblju razne izvještaje (kronologija rada svih ili izabranog pojedinca, frekvencija rada osoba i sl.)  </li>
+                    <li><b>Pretraživanje i sortiranje</b> - svaki tabelarni prikaz mora imati omogućeno pretraživanje i sortiranje po minimalno dva stupca.</li>
+                    <li><b>Autentikacija</b> - treba biti provedena vlastitom metodom s bazom podataka. Potrebna je validacija podataka na korisničkoj i poslužiteljskoj strani. Osigurati sigurnost i zaštititi od automata kod registracije korisnika. Poželjno je da se pamte podaci zadnje uspješne prijave (korisničko ime).</li>
+                    <li><b>HTTPS</b> - prijava mora ići preko sigurne linije tj. preko HTTPS protokola. Ostatak projekta ne mora biti preko HTTPS-a.</li>
+                    <li><b>Korisničko sučelje</b> - treba biti realizirano uz pomoć AJAX-a preuzimati podatke s poslužitelja (preporučujemo XML ili JSON, varijanta s HTML-om donosi manje bodova). jQuery može se koristiti kod određenih dijelova projekta, veće korištenje donosi više bodova. Za preglede kataloga podataka i ostale preglede potrebno je primjenjivati straničenje (pogledaj točku 5). Poželjna je personalizacija i pomoć/olakšanje rada korisnika (npr. više CSS-ova).</li>
+                    <li><b>Podaci u bazi podataka</b> - glavni katalozi podataka (npr. korisnici, obiteljska stabla, nekretnine, vozila, dijelovi, oprema i sl.) trebaju sadržavati više od 20 pojedinačnih elemenata. Ostale tablice podataka trebaju imati više 30 pojedinačnih elemenata.</li>
+                    <li><b>Virtualno vrijeme</b> - rad aplikacije temelji se na virtualnom vremenu koje polazi od stvarnog vremena na poslužitelju koje se korigira za određeni pomak vremena. Jedinica vremena kod pomaka je 1 sat. Administrator aplikacije jedini može obaviti usklađivanje vremena, npr. treba pomaknuti za 7 dana naprijed pa je pomak 148 sati. Kod pomaka u nazad za 7 dana (prošlost) radi se o -148 sati. Nakon što administrator obavi usklađivanje vremena, sve aktivnosti vežu se uz novo virtualno vrijeme. Preporučuju se posebna funkcija kojom će se dobivati virtualno vrijeme i koja će se koristiti kod svih vremenskih uspoređivanja.</li>
+                    <li><b>Instalacija</b> - rješenje treba biti instalirano na računalu barka.foi.hr. Pristup ostalim studentima treba biti zabranjen!</li>
+                    <li><b>Podaci</b> - se pohranjuju u MySQL bazu podataka pod nazivom WebDiP2015xnn (nn je broj studenta 01 <= nn <= 300). Za studente će biti kreirane potrebne baze podataka i dodijeljene potrebne privilegije za rad s bazom podataka. Studenti će dobiti potrebne informacije za bazu podataka.</li>
+                    <li><b>Direktorij</b> - na kojem je smješteno projektno rješenje treba biti WebDiP2015xnn (nn je broj studenta 01 <= nn <= 300) u direktoriju /var/www/WebDip/2015_projekti. Studenti će dobiti poruku s potrebnim informacijama za smještaj projektnog rješenja. Na direktoriju projektnog rješenja smiju se nalaziti samo skripte i ostali podaci vezani uz projektno rješenje.</li>
+                    <li><b>Direktorij privatno</b> - treba biti zaštićen .htaccess datotekom pri čemu u njoj treba postojati korisnik s istim korisničkim imenom i lozinkom kao i pristup do baze podataka (pogledaj točku 15). Skripta privatno/korisnici.php treba ispisati sve korisnike, njihove lozinke i vrstu. Pristup do skripte nije ograničen na korisnike aplikacije.</li>
+                    <li><b>Dokumentacija</b> - Naziv datoteke treba biti dokumentacija.html i njoj se pristupa iz početne stranice projektnog rješenja.</li>
+                    <li><b>O autoru</b> - Naziv datoteke treba biti o_autoru.html i njoj se pristupa sa početne stranice projektnog rješenja. Stranica mora imati sliku (kao u indeksu), ime, prezime, broj indeksa i mail (sa linkom koji otvara slanje maila). Ostatak stranice sadrži podatke prema želji.</li>
+                </ol>
+
+
+
+
+                <h3>Opis projektnog rješenja</h3>
+                <p>Aplikacija omogućuje studentima (registriranim korisnicima) rezervaciju menija u menzi.
+                    Postoje uloge: neregistrirani korisnik, registrirani korisnik, moderator i administrator.</p>
+                <b>Administrator</b>
+                <ul>
+                    <li>Kreira, briše i uređuje menze, dodaje moderatore menzi</li>
+                    <li>Ima pristup dnevniku sustava</li>
+                    <li>Može mijenjati postavke sustava</li>
+                    <li>Kreira nove korisnike, mogućnost otključavanja i zaključavanja računa</li>
+                    <li>Sve ostale ovlasti koje ima moderator</li>
+
+                </ul>
+
+                <b>Moderator</b>
+                <ul>
+                    <li>Kreira, briše i uređuje dnevne ponude za menze na kojima je moderator.</li>
+                    <li>Kreira nove menije u katalogu</li>
+                    <li>Vidi sve rezervacije korisnika, može ih potvrditi/odbiti.</li>
+                    <li>Potvrđuje ili bilježi nedolaske korisnika, čime ih se stavlja na crnu listu u toj menzi.</li>
+                    <li>Vidi 'alarmantne menije' - onima s niskom količinom i može im povećati količinu.</li>
+                    <li>Sve ostale ovlasti koje ima registrirani korisnik.</li>
+
+                </ul>
+
+                <b>Registrirani korisnik</b>
+                <ul>
+                    <li>Rezervira meni u menzi, na određeni dan u određeno vrijeme, ako količina nije 0.</li>
+                    <li>Ne može rezervirati ako se nalazi na crnoj listi u tom trenutku u izabranoj menzi.</li>
+                    <li>Vidi sve svoje rezervacije i da li je na crnoj listi u nekoj menzi.</li>
+                    <li>Može kliknuti na gumb 'sviđa mi se' ili 'ne sviđa mi se', za svaku menzu u kojoj je bio i za svaki meni koji je jeo.</li>
+                    <li>Sve ostale ovlasti koje ima neregistrirani korisnik.</li>
+                </ul>
+
+                <b>Neregistrirani korisnik</b>
+                <ul>
+                    <li>Vidi popis menzi i odabirom menze vidi popis tri najkorištenija menija a današnji dan.</li>
+                    <li>Ima opciju registracije i prijave u sustav.</li>
+                </ul><br>
+
+                <h3>Odrednice projektnog rješenja</h3>
+                <a href="img/era_novi.png" target="_blank">ERA model</a>
+
+                <h3>Popis i opis skripti</h3>
+                <p></p>
+
+                <h3>Popis i opis korištenih tehnologija i alata</h3>
+                <ul>
+                    <li>Jezici i tehnologije: HTML, CSS, JQuery, AJAX, PHP</li>
+                    <li>Alati: NetBeans IDE, Mozilla Firefox, Internet Explorer, MYSQL Workbench, XAMPP, Notepad++</li>
+                </ul>
+                
+                <h3>Vanjski izvori</h3>
+                <ul>
+                    <li>web-stranice: php.net, w3schools.com</li>
+                    <li>FOI Moodle ELF: kolegij WebDiP, preuzete/prilagođene skripte: baza.class.php, aplikacijskiOkvir.php, error.php, dnevnik.php, korisnik.php</li>
+                </ul>
+
+
+            </section>
+
+
+            <footer>
+                <address>Kontakt: <a href="mailto:paukokic@foi.hr">Paula Kokić</a></address>
+                <p>&copy; 2016 P. Kokić</p>
+            </footer>
+        </div>
+    </body>
+</html>
+

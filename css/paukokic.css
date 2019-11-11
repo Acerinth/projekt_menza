@@ -1,0 +1,213 @@
+
+body { 
+    color: #000000; 
+    font-family: Arial; 
+    margin: auto;
+    width: 80%;
+    position: relative;
+}
+header {
+    background-color: #404D7F;
+    background-size: 250px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 5px 0px;
+}
+
+.glavna {
+    background: #FFEEBC; 
+    padding: 2px;
+}
+
+.traka {
+    padding: 10px 15px;
+    text-align: right;
+    background-color: #404D7F;
+    margin: 5px 10px;
+    border-radius: 5px;
+}
+
+a {
+    color: #404D7F;
+}
+
+.traka a {
+    color: #FFFFFF;
+    font-style: normal;
+}
+
+.traka a:hover {
+    color: #FFEEBC;
+}
+
+.lijevo {
+    text-align: left;
+    max-width: 50%;
+    float: left;
+}
+
+.lijevo a {
+    padding: 5px 5px 15px 5px;
+}
+
+.desno {
+    text-align: right;
+    max-width: 50%;
+    
+}
+
+.desno a, #korisnik {
+    padding: 5px 5px 5px 15px;
+    color: #FFFFFF;
+}
+
+#sadrzaj {
+    padding: 10px 25px;
+    width: content-box;
+}
+
+.admin {
+    width: 100%;
+    margin: 10px 10px;
+    padding: 5px;
+}
+
+.moderator {
+    width: 100%;
+    margin: 10px 10px;
+    padding: 5px;
+}
+
+.korisnik {
+    width: 100%;
+    margin: 10px 10px;
+    padding: 5px;
+}
+
+.slika {
+    margin: 5px 5px;
+    float: left;
+}
+
+.tekst {
+    margin: 15px;
+    float: left;
+}
+
+
+figcaption {
+    font-family: Times New Roman;
+    font-size: 20px;
+    color: #404D7F;
+}
+
+figure {
+    border-color: white;
+    border-width: medium;
+    border-style: groove;
+    border-radius: 10px;
+    margin: 20px;
+    float: left;
+    padding: 10px;
+    text-align: center;  
+}
+
+form {
+    background-color: #404D7F;
+    border-radius: 5px;
+    padding: 5px;
+    color: #FFFFFF;
+    width: 70%;
+}
+
+form p {
+    padding: 10px;
+    margin: 0px;
+}
+
+form a {
+    color: #FFFFFF;
+}
+
+form a:hover {
+    color: #FFEEBC;
+}
+
+footer {
+    clear: both;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.formaTablica {
+    background-color: #FFEEBC;
+    color: #000000;
+}
+
+.formaTablica a {
+    color: #404D7F;
+}
+
+.formaTablica a:hover {
+    color: #404D7F;
+}
+
+.posebnaTablica {
+    border-style: none;
+    border-width: 0px;
+    padding: 5px 10px;
+}
+
+.posebnaTablica th  {
+    
+    border-style: solid;
+    border-width: 1px;
+    border-color: #404D7F;
+    text-align: center;
+}
+
+.posebnaTablica td {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #404D7F;
+    text-align: center;
+}
+
+
+.posebnaTablica > tbody tr:hover {
+    background-color: #404D7F;
+}
+
+table, td, th { 
+    border: 1px solid gray;
+}
+
+table > tbody tr:hover{
+    background-color: #FFFFFF;
+}
+
+.lose {
+    border-color: red;
+    border-width: 2px;
+    background-color: lightpink;
+}
+
+.dobro {
+    border-color: green;
+}
+
+.greska1 {
+    color: #FFEEBC;
+    font-size: 12px;
+    padding: 0px 10px;
+}
+
+.oznaceno {
+    border-width: 3px;
+    background: #FFEEBC;
+}
+
+
+
+
